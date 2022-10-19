@@ -1,8 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+import express from 'express';
+import cors from 'cors';
+import { config } from 'dotenv';
 
-require('dotenv').config();
+config();
 
 const app = express();
 
@@ -10,8 +10,8 @@ app.use(cors({
     origin: '*'
 }));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+app.use(express.json());
+app.use(express.urlencoded({
     extended: true
 }));
 
